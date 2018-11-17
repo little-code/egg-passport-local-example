@@ -7,8 +7,35 @@ export default (appInfo: EggAppInfo) => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1542377129078_6649';
 
+  config.session = {
+    key: 'TG_WEB_SESS',
+    maxAge: 24 * 3600 * 1000, // 1 天
+    httpOnly: true,
+    encrypt: true
+  }
+
   // add your egg config in here
   config.middleware = [];
+
+  config.view = {
+    mapping: {
+      '.ejs': 'ejs'
+    }
+  }
+
+  config.security = {
+    csrf: {
+      useSession: true,
+      cookieName: 'csrfToken',
+      sessionName: 'csrfToken',
+      ignoreJSON: true
+    }
+  }
+
+  config.passportLocal = {
+    usernameField: 'username',
+    passwordField: 'password',
+  }
 
   // add your special config in here
   const bizConfig = {
