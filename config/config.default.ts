@@ -37,6 +37,12 @@ export default (appInfo: EggAppInfo) => {
     passwordField: 'password',
   }
 
+  config.cluster = {
+    listen: {
+      port: process.env.PORT || 7001,
+    }
+  }
+
   // add your special config in here
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
