@@ -15,6 +15,7 @@
   "author": "vagusX",
   "license": "MIT",
   "scripts": {
+    "prestart": "npm run tsc",
     "start": "egg-scripts start --title=egg-server-passport-local-example",
     "stop": "egg-scripts stop --title=egg-server-passport-local-example",
     "dev": "egg-bin dev -r egg-ts-helper/register",
