@@ -6,7 +6,7 @@
     "typescript": true
   },
   "engines": {
-    "node": ">=8.9.0"
+    "node": "10.x"
   },
   "repository": {
     "type": "git",
