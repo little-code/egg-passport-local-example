@@ -2,12 +2,20 @@
   "name": "egg-passport-local-example",
   "version": "1.0.0",
   "description": "",
-  "private": true,
   "egg": {
     "typescript": true
   },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/little-code/egg-passport-local-example"
+  },
+  "author": "vagusX",
+  "license": "MIT",
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-passport-local-example",
+    "start": "egg-scripts start --title=egg-server-passport-local-example",
     "stop": "egg-scripts stop --title=egg-server-passport-local-example",
     "dev": "egg-bin dev -r egg-ts-helper/register",
     "debug": "egg-bin debug -r egg-ts-helper/register",
@@ -25,7 +33,6 @@
     "egg-passport": "^2.0.1",
     "egg-passport-local": "^1.2.1",
     "egg-scripts": "^2.6.0",
-    "egg-sequelize": "^4.2.0",
     "egg-userrole": "^2.0.0",
     "egg-view-ejs": "^2.0.0"
   },
@@ -43,21 +50,7 @@
     "egg-ts-helper": "^1.11.0",
     "tslib": "^1.9.0",
     "tslint": "^4.0.0",
+    "tslint-config-standard": "^8.0.1",
     "typescript": "^3.0.0"
-  },
-  "engines": {
-    "node": ">=8.9.0"
-  },
-  "ci": {
-    "version": "8"
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "eslintIgnore": [
-    "coverage"
-  ],
-  "author": "",
-  "license": "MIT"
+  }
 }

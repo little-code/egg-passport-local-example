@@ -1,4 +1,4 @@
-import { Controller } from 'egg';
+import { Controller } from 'egg'
 
 export default class HomeController extends Controller {
   async index () {
@@ -24,13 +24,12 @@ export default class HomeController extends Controller {
         user: this.ctx.user
       })
     } else {
-      this.ctx.body = 'you donnot login'
+      this.ctx.redirect('/')
     }
   }
 
   async authCallback () {
     await this.ctx.login(this.ctx.user)
-    // this.ctx.body = 'auth callback'
     this.ctx.redirect('/profile')
   }
 }

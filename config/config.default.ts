@@ -1,11 +1,11 @@
-import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg'
 
 export default (appInfo: EggAppInfo) => {
-  const config = {} as PowerPartial<EggAppConfig>;
+  const config = {} as PowerPartial<EggAppConfig>
 
   // override config from framework / plugin
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1542377129078_6649';
+  config.keys = appInfo.name + '_1542377129078_6649'
 
   config.session = {
     key: 'TG_WEB_SESS',
@@ -15,7 +15,7 @@ export default (appInfo: EggAppInfo) => {
   }
 
   // add your egg config in here
-  config.middleware = [];
+  config.middleware = []
 
   config.view = {
     mapping: {
@@ -27,30 +27,29 @@ export default (appInfo: EggAppInfo) => {
     csrf: {
       useSession: true,
       cookieName: 'csrfToken',
-      sessionName: 'csrfToken',
-      ignoreJSON: true
+      sessionName: 'csrfToken'
     }
   }
 
   config.passportLocal = {
     usernameField: 'username',
-    passwordField: 'password',
+    passwordField: 'password'
   }
 
   config.cluster = {
     listen: {
-      port: process.env.PORT || 7001,
+      port: process.env.PORT || 7001
     }
   }
 
   // add your special config in here
   const bizConfig = {
-    sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
-  };
+    sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`
+  }
 
   // the return config will combines to EggAppConfig
   return {
     ...config,
-    ...bizConfig,
-  };
-};
+    ...bizConfig
+  }
+}

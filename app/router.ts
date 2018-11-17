@@ -1,11 +1,11 @@
-import { Application } from 'egg';
+import { Application } from 'egg'
 
 import db, { UserIdentity } from '../db'
 
 export default (app: Application) => {
-  const { controller, router } = app;
+  const { controller, router } = app
 
-  // 处理用户信息
+  // handle user info here
   app.passport.verify(async (_, user) => {
     const { username, password } = user
     const targetUser = await db.users.findByUsername(username)
@@ -39,6 +39,6 @@ export default (app: Application) => {
   // 登录校验
   router.post('/login', app.passport.authenticate('local', {
     successRedirect: '/authCallback',
-    failureRedirect: '/login',
+    failureRedirect: '/login'
   }))
-};
+}
