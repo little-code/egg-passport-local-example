@@ -6,7 +6,7 @@
     "typescript": true
   },
   "engines": {
-    "node": "10.x"
+    "node": "8.x"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "test-local": "egg-bin test -r egg-ts-helper/register",
     "test": "npm run lint -- --fix && npm run test-local",
     "cov": "egg-bin cov -r egg-ts-helper/register",
-    "tsc": "ets && tsc -p tsconfig.json",
+    "tsc": "tsc -p tsconfig.json",
     "ci": "npm run lint && npm run cov && npm run tsc",
     "autod": "autod",
     "lint": "tslint --project . -c tslint.json",
@@ -49,9 +49,15 @@
     "egg-ci": "^1.8.0",
     "egg-mock": "^3.16.0",
     "egg-ts-helper": "^1.11.0",
+    "husky": "^1.1.4",
     "tslib": "^1.9.0",
     "tslint": "^4.0.0",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "ets"
+    }
   }
 }
