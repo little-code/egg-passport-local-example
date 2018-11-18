@@ -1,6 +1,6 @@
-# hackernews-async-ts
+# egg-passport-local-example
 
-[Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
+[Passportjs](http://www.passportjs.org/) local showcase using typescript && egg
 
 ## QuickStart
 
@@ -12,13 +12,12 @@ $ npm run dev
 $ open http://localhost:7001/
 ```
 
-Don't tsc compile at development mode, if you had run `tsc` then you need to `npm run clean` before `npm run dev`.
+Since heroku would [strip out devDependencies](https://devcenter.heroku.com/articles/nodejs-support#package-installation) before deployment, we use [`postinstall` hook](https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process) to compile ts to js.  
 
 ### Deploy
 
 ```bash
-$ npm run tsc
-$ npm start
+$ npm run start
 ```
 
 ### Npm Scripts
